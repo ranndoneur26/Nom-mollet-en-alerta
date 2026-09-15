@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --blau: #173b4c;
+  --blau-fosc: #0e2733;
+  --verd: #1f7a68;
+  --verd-clar: #e7f3ef;
+  --ambre: #c97b1e;
+  --vermell: #b03a2e;
+  --gris-fosc: #20272b;
+  --gris-mig: #5b6b72;
+  --gris-vora: #d8dedf;
+  --fons: #f5f4ef;
+  --panell: #ffffff;
+  --focus: #0e5fe0;
+  --radi: 6px;
+  --font-cap: "Archivo", sans-serif;
+  --font-cos: "Public Sans", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; background: var(--fons); color: var(--gris-fosc); }
+body { font-family: var(--font-cos); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: var(--font-cap); margin: 0; line-height: 1.15; }
+a { color: var(--blau); }
+button { font-family: var(--font-cos); cursor: pointer; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.skip-link { position: absolute; left: -999px; background: var(--blau); color: #fff; padding: 10px 16px; z-index: 200; font-weight: 700; }
+.skip-link:focus { left: 0; top: 0; }
+
+.topbar { background: var(--blau-fosc); color: #fff; padding: 10px 16px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; margin-right: auto; text-decoration: none; }
+.brand-mark { width: 38px; height: 38px; border-radius: 8px; background: var(--ambre); display: flex; align-items: center; justify-content: center; font-family: var(--font-cap); font-weight: 800; color: var(--blau-fosc); font-size: 18px; }
+.brand-text h1 { font-size: 18px; color: #fff; }
+.brand-text span { font-size: 11.5px; color: #b9c7cc; display: block; }
+.topnav { display: flex; gap: 4px; flex-wrap: wrap; }
+.topnav a, .topnav button { background: transparent; border: 1px solid transparent; color: #dce6e8; padding: 8px 12px; border-radius: var(--radi); font-size: 14px; font-weight: 600; text-decoration: none; }
+.topnav a.active { background: #fff; color: var(--blau-fosc); }
+.acct-btn { background: var(--verd); border: 0; color: #fff; padding: 8px 14px; border-radius: var(--radi); font-weight: 700; font-size: 14px; text-decoration: none; white-space: nowrap; }
+
+.disclaimer { background: #fcefe0; color: #5c3a0e; font-size: 13px; padding: 7px 16px; text-align: center; border-bottom: 1px solid #ead3ac; }
+
+.btn { border-radius: var(--radi); padding: 12px 18px; font-weight: 700; font-size: 15px; border: 2px solid transparent; display: inline-block; text-decoration: none; }
+.btn-primary { background: var(--ambre); color: #20180a; }
+.btn-outline { background: transparent; border: 2px solid var(--blau); color: var(--blau); }
+.btn-sm { padding: 8px 12px; font-size: 13.5px; border-radius: 5px; }
+.btn-ghost { background: transparent; border: 1px solid var(--gris-vora); color: var(--gris-fosc); }
+
+.panel { background: var(--panell); border: 1px solid var(--gris-vora); border-radius: var(--radi); }
+.status-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 700; padding: 3px 8px; border-radius: 20px; white-space: nowrap; color: #fff; }
+
+.i-card { background: #fff; border: 1px solid var(--gris-vora); border-radius: var(--radi); padding: 13px 14px; display: flex; gap: 12px; cursor: pointer; text-decoration: none; color: inherit; }
+.i-card:hover { border-color: var(--blau); }
+.i-title { font-weight: 700; font-size: 14.5px; color: var(--gris-fosc); }
+.i-meta { font-size: 12.5px; color: var(--gris-mig); margin-top: 2px; }
+.demo-flag { display: inline-block; background: #4b3b9e; color: #fff; font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-left: 6px; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 16px 0 26px; }
+.kpi { background: #fff; border: 1px solid var(--gris-vora); border-radius: var(--radi); padding: 14px; }
+.kpi .num { font-family: var(--font-cap); font-size: 26px; font-weight: 800; color: var(--blau-fosc); }
+.kpi .lbl { font-size: 12.5px; color: var(--gris-mig); margin-top: 2px; }
+
+.warn-box { background: #fcf3dc; border: 1px solid #ead3ac; border-radius: 6px; padding: 10px 12px; font-size: 12.5px; color: #6b4e0e; margin: 10px 0; }
+
+footer { background: var(--blau-fosc); color: #b9c7cc; font-size: 12.5px; padding: 20px 16px; text-align: center; }
+footer a { color: #dce6e8; }
