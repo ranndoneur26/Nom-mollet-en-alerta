@@ -55,7 +55,7 @@ export function CreateIncidentForm({ categories }: { categories: CategoryWithSub
       const { data: auth } = await supabase.auth.getUser();
       if (!auth.user) throw new Error(dict.form.needLogin);
 
-      const { data: incident, error: insertError } = await supabase
+      const { data: incidentRow, error: insertError } = await supabase
         .from("incidents")
         .insert({
           title,
@@ -67,10 +67,11 @@ export function CreateIncidentForm({ categories }: { categories: CategoryWithSub
           address,
           urgency,
           author_id: auth.user.id,
-        } as any)
+        })
         .select("id, public_id")
         .single();
       if (insertError) throw insertError;
+      const incident = incidentRow as { id: string; public_id: string } | null;
       if (!incident) throw new Error("No s'ha pogut crear la incidència");
 
       if (photoFile) {
