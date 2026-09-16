@@ -71,6 +71,7 @@ export function CreateIncidentForm({ categories }: { categories: CategoryWithSub
         .select("id, public_id")
         .single();
       if (insertError) throw insertError;
+      if (!incident) throw new Error("No s'ha pogut crear la incidència");
 
       if (photoFile) {
         const path = `${incident.id}/${Date.now()}-${photoFile.name}`;
