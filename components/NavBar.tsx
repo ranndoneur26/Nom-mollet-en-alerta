@@ -29,8 +29,8 @@ export function NavBar() {
       if (!auth.user) { setAlias(null); setRole(null); return; }
       const { data: profile } = await supabase
         .from("profiles").select("alias, role").eq("id", auth.user.id).single();
-      setAlias(profile?.alias ?? null);
-      setRole((profile?.role as UserRole) ?? null);
+      setAlias(profile ? profile.alias : null);
+      setRole(profile ? (profile.role as UserRole) : null);
 
       const { data: notifRows } = await supabase
         .from("notifications").select("*").eq("user_id", auth.user.id)
